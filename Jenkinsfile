@@ -2,14 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('checkout') {
-            steps {
-                echo "Scripts:"
-                sh "ls"
-                git branch: 'master', url: 'https://github.com/atilaoliveirajr/jenkins.demo.git'
-                sh "ls"
-            }
-        }
         stage('build') {
             steps {
                 sh "./mvnw package"
